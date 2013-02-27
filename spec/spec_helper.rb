@@ -1,0 +1,1 @@
+DatabaseCleaner.orm = "mongoid"

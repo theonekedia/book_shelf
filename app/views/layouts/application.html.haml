@@ -1,0 +1,29 @@
+!!!
+%html{:lang => :en}
+	%head
+		%meta{:charset => "utf-8"}/
+		%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+		%title BookShelf
+		= javascript_include_tag "application"
+		= stylesheet_link_tag "application"
+		= csrf_meta_tags
+	%body
+		.navbar
+			.navbar-inner
+				.container-fluid
+					= link_to "BookShelf", root_path, :class => 'brand'
+					%ul.nav
+						%li.dropdown
+							%a.dropdown-toggle{ :href => '#', "data-toggle" => "dropdown"}
+								="Authors"
+								%b.caret
+							%ul.dropdown-menu
+								%li= link_to "List Authors", authors_path
+								%li= link_to "New Author", new_author_path
+						%li= link_to "Orders", orders_path
+						%li= link_to "New Order", new_order_path
+		.container
+			.content
+				= yield
+			.footer
+				%p Goldie Kedia &copy; TheOne 2011
